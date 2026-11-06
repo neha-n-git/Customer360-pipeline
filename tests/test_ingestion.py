@@ -6,7 +6,7 @@ from src.ingestion.csv_loader import load_csv
 from src.ingestion.xml_loader import load_xml
 
 
-RAW_DIR = Path("data/raw")
+RAW_DIR = Path("data/raw/batch_2026_11_06_003")
 
 
 def test_json_loader():
