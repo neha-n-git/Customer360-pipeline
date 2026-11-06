@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Generated data
+data/bronze/*
+data/silver/*
+data/gold/*
+data/quarantine/*
+data/analytics/*
+
+# Logs
+logs/*.log
+
+# Test and IDE caches
+.pytest_cache/
+.vscode/
+.idea/
+
+# Environment variables
+.env

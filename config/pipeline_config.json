@@ -1,0 +1,38 @@
+
+{
+  "pipeline": {
+    "name": "customer_360",
+    "version": "1.0",
+    "as_of_date": null
+  },
+  "paths": {
+    "raw": "data/raw",
+    "bronze": "data/bronze",
+    "silver": "data/silver",
+    "gold": "data/gold",
+    "quarantine": "data/quarantine",
+    "analytics": "data/analytics",
+    "logs": "logs"
+  },
+  "sources": {
+    "crm": "crm_customers.json",
+    "orders": "orders.csv",
+    "support": "support_tickets.xml"
+  },
+  "quality": {
+    "customer_id_pattern": "^C\\d{4}$",
+    "unmatched_reason": "Customer ID is not present in valid CRM records",
+    "email_validation": true,
+    "remove_whitespace": true,
+    "normalize_email_case": true,
+    "handle_duplicates": true
+  },
+  "segmentation": {
+    "gold_min": 100000,
+    "silver_min": 50000,
+    "high_support_ticket_threshold": 5
+  },
+  "reporting": {
+    "top_customers_limit": 10
+  }
+}
